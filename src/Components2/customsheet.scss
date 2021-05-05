@@ -1,0 +1,128 @@
+.nav{
+    background: rgb(27, 156, 255);
+    width:100vw;
+    display: flex;
+    justify-content: space-between;
+    height:3.2em;
+    overflow:hidden;
+    // z-index: 1000;
+    // position: relative;
+}
+
+.nav-extra{
+    position:absolute;
+    z-index: 1;
+    display: flex;
+    right:30px;
+    height: 3.2em;
+    background:white;
+    transform: skewX(-20deg);
+    width:50vw;
+    animation-name: navwhite;
+    animation-iteration-count: 1;
+    animation-duration: 1s;
+    overflow: hidden;
+    animation-timing-function: linear;
+}
+
+@keyframes navwhite {
+    0%{
+        right:-50vw;
+        transform: skewX(0);
+    }
+    70%{
+        right:30px;
+        transform: skewX(0);
+    }
+    100%{
+        right:30px;
+        transform: skewX(-20deg);
+    }
+}
+
+.nav-right{
+    position: relative;
+    z-index: 200;
+    width:50vw;
+    right:auto;
+    overflow-x: scroll;
+    display: flex;
+    margin-right:25px;
+    align-items: center;
+    animation-name: navright;
+    // animation-delay:  1s;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    .nav-text{
+        margin-left:0.4em;
+
+        // color: 
+    }
+}
+.nav-right::-webkit-scrollbar{
+    overflow: hidden;
+    background:white;
+    width:1px;
+    height:1px;
+}
+
+@keyframes navright {
+    0%{
+        opacity:0;
+    }
+    30%{
+        opacity: 0;
+        top:0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.nav-left{
+    color:white;
+    display:flex;
+    align-items: center;
+    margin-left:1em;
+}
+
+.morehoriz{
+    animation-name: morehorizt;
+    animation-timing-function: linear;
+    animation-duration: 2;
+    animation-iteration-count: infinite;
+}
+
+@keyframes morehorizt {
+    0%{
+        margin-left:0;
+    }
+    50%{
+        margin-left:30px;
+    }
+    100%{
+        margin-left:0;
+    }
+}
+.morevert{
+    animation-name: morevert;
+    animation-timing-function: linear;
+    animation-duration: 2;
+    animation-iteration-count: infinite;
+}
+
+
+
+@media screen and (min-width : 500px ) {
+    .nav-right{
+        .nav-text{
+            margin-left:1.3em;
+        }
+    }
+
+    .nav-left{
+        margin-left:4em;
+    }
+
+}
